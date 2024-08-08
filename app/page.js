@@ -1,5 +1,5 @@
 'use client'
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Image from "next/image";
 import {useState} from 'react';
 
