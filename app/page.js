@@ -16,14 +16,14 @@ export default function Home() {
     setMessages((messages)=>[
       ...messages,
       {role: "user", content: message},
-      {role:"assistant", content: " "}
+      {role:"assistant", content: " "},
     ])
     const response= fetch('/api/chat',{
-      method:"POST",
+      method:'POST',
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify([...messages, {role:'user', content:messages}])
+      body: JSON.stringify([...messages, {role:'user', content:messages}]),
     }).then(async (res)=>{
       const reader= res.body.getReader()
       const decoder= new TextDecoder()
@@ -86,7 +86,8 @@ export default function Home() {
           value={message}
           onChange={(e)=> setMessage(e.target.value)}
           />
-            <Button variant= "contained">Send</Button>
+            <Button variant= "contained" onClick= {sendMessage}>
+              Send</Button>
         </Stack>
       </Stack>
     </Box>

@@ -13,14 +13,14 @@ export async function POST(req){
     //we are using a post route because we'll be sending out information and expecting stuff back
     const openai= new OpenAI()
     const data= await req.json() //gets json data from your request
+    //below: chat completion from your request
+    //await ensures your code isn't blocked while waiting for a response, allows multiple requests to be sent at the same time
     const completion= await openai.chat.completions.create({
-        //chat completion from your request
-        //await ensures your code isn't blocked while waiting for a response, allows multiple requests to be sent at the same time
+        
         messages: [{
             role: 'system', content: systemPrompt
         },
-        ...data, //"spread" operator to get the rest of our message data
-    ],
+        ...data], //"spread" operator to get the rest of our message data
     model: "gpt-4o-mini", stream: true,
     })   
     //now we need to output this to the front end so we will make a stream response
@@ -37,8 +37,8 @@ export async function POST(req){
                     }
                 }
             }
-            catch(error){
-                controller.error(error)
+            catch(err){
+                controller.error(err)
             }
             finally{
                 controller.close()
