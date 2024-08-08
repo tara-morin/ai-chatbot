@@ -39,6 +39,16 @@ export default function Home() {
                 </Box>
           ))}
         </Stack>
+        <Stack direction="row" spacing={2} >
+          <Textfield label= "message" 
+          fullWidth 
+          value= {message}
+          onChange={(e)=> setMessage(e.target.value)}>
+            <Button variant= "contained">
+              Send
+            </Button>
+          </Textfield>
+        </Stack>
       </Stack>
     </Box>
   )
