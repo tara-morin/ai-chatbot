@@ -20,7 +20,7 @@ export async function POST(req){
         messages: [{
             role: 'system', content: systemPrompt
         },
-        ...data], //"spread" operator to get the rest of our message data
+        ...data,], //"spread" operator to get the rest of our message data
     model: "gpt-4o-mini", stream: true,
     })   
     //now we need to output this to the front end so we will make a stream response
