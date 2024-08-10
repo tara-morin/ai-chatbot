@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
-import OpenAI from "openai";
+import { NextResponse } from 'next/server';
+import OpenAI from 'openai';
 
 //system prompt tells ai how to behave
 const systemPrompt= "You are HeadstarterAI's customer support assistant, designed to provide comprehensive and friendly support to users of our AI-powered interview platform for aspiring software engineers. Your main goals are to:\
