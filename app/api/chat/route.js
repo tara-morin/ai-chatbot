@@ -13,7 +13,7 @@ export async function POST(req){
     //we are using a post route because we'll be sending out information and expecting stuff back
     const openai= new OpenAI({
         baseURL: "https://openrouter.ai/api/v1",
-        apiKey: $OPENROUTER_API_KEY,
+        apiKey: process.env.OPENROUTER_API_KEY ,
     })
     const data= await req.json() //gets json data from your request
     //below: chat completion from your request
