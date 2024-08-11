@@ -11,7 +11,10 @@ Ensure that all interactions are informative and user-friendly, reflecting Heads
 
 export async function POST(req){
     //we are using a post route because we'll be sending out information and expecting stuff back
-    const openai= new OpenAI()
+    const openai= new OpenAI({
+        baseURL: "https://openrouter.ai/api/v1",
+        apiKey: $OPENROUTER_API_KEY,
+    })
     const data= await req.json() //gets json data from your request
     //below: chat completion from your request
     //await ensures your code isn't blocked while waiting for a response, allows multiple requests to be sent at the same time
@@ -21,7 +24,7 @@ export async function POST(req){
             role: 'system', content: systemPrompt
         },
         ...data,], //"spread" operator to get the rest of our message data
-    model: "gpt-3.5-turbo", stream: true,
+    model: "google/gemma-2-9b-it:free", stream: true,
     })   
     //now we need to output this to the front end so we will make a stream response
 
