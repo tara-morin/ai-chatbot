@@ -63,6 +63,7 @@ export default function Home() {
       direction= "column"
       width= "600px"
       height= "700px"
+      fontFamily='-apple-system-body'
       border= "1px solid black"
       p={2} spacing={3}>
         <Stack direction="column" spacing= {2} flexGrow={1} overflow="auto" maxHeight= "100%">
@@ -72,7 +73,8 @@ export default function Home() {
                 message.role==='assistant'? 'flex-start': 'flex-end'}> 
                 {/* makes it so the message goes to one side or the other depending on if its from the chatbot or not */}
                 <Box bgcolor= {
-                  message.role==='assistant'? 'primary.main' : 'secondary.main'} color= "white" borderRadius={16} p={3}>
+                  message.role==='assistant'? '#f5f5f5' : 'blue'} color= {
+                    message.role==='assistant'? 'black' : 'white'} borderRadius={16} p={3}>
                     {/* changes message color depending on role. regular color is the oclor of the text, border radius makes the edges curved */}
                     {message.content}
                 </Box>
@@ -81,7 +83,7 @@ export default function Home() {
         </Stack>
         <Stack direction="row" spacing={2}>
           <TextField 
-          label= "message" 
+          label= "Ask a question..." 
           fullWidth 
           value={message}
           onChange={(e)=> setMessage(e.target.value)}
