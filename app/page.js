@@ -63,7 +63,7 @@ export default function Home() {
       direction= "column"
       width= "600px"
       height= "700px"
-      fontFamily='-apple-system-body'
+      fontFamily='-apple-system, system-ui, BlinkMacSystemFont'
       border= "1px solid black"
       p={2} spacing={3}>
         <Stack direction="column" spacing= {2} flexGrow={1} overflow="auto" maxHeight= "100%">
