@@ -73,7 +73,7 @@ export default function Home() {
                 message.role==='assistant'? 'flex-start': 'flex-end'}> 
                 {/* makes it so the message goes to one side or the other depending on if its from the chatbot or not */}
                 <Box bgcolor= {
-                  message.role==='assistant'? '#f5f5f5' : 'blue'} color= {
+                  message.role==='assistant'? '#f5f5f5' : '#147efb'} color= {
                     message.role==='assistant'? 'black' : 'white'} borderRadius={16} p={3}>
                     {/* changes message color depending on role. regular color is the oclor of the text, border radius makes the edges curved */}
                     {message.content}
