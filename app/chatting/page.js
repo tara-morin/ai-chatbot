@@ -1,9 +1,8 @@
 'use client'
-import {Box, Stack, TextField, Button} from '@mui/material';
+import {Link, Box, Stack, TextField, Button} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send'
 import Image from "next/image";
 import {useState} from 'react';
-import Link from 'next/link'
 
 export default function Home() {
   const [messages, setMessages]= useState([{
@@ -60,7 +59,14 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      bgcolor="#ffd9e8"
     >
+      <Box
+      width= "600px"
+      height= "700px"
+      sx={{
+        bgcolor: 'white'
+      }}>
       <Stack
       direction= "column"
       width= "600px"
@@ -94,6 +100,7 @@ export default function Home() {
               Send</Button>
         </Stack>
       </Stack>
+      </Box>
     </Box>
   )
 }

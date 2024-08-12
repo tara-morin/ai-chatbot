@@ -1,17 +1,34 @@
-import {Button, Typography} from '@mui/material';
-import Link from 'next/link'
+import {Link, Button, Typography, Box} from '@mui/material';
 export default function Home(){
 
     return (
-        <div>
+        <Box 
+            bgcolor="#ffd9e8"
+            width="100vw"
+            height= "100vh">
+        <Box
+            sx={{
+                justifyContent:'center',
+                alignItems: 'center',
+                display: 'flex',
+                alignContent:'center',
+                flexDirection:'column',
+                padding:20
+            }}
+        >
         <Typography
-        fontFamily='-apple-system, system-ui, BlinkMacSystemFont'>
-            Welcome to your relationship textbot!
+            sx={{fontFamily:'-apple-system, system-ui, BlinkMacSystemFont',
+                fontSize:'40px',
+                textAlign:'center'
+            }}
+        >
+            Welcome to the relationship textbot!
         </Typography>
         <Button variant= "contained">
-            <Link href="/chatting">Get Started</Link>
+            <Link underline= "none" href="/chatting" color="white">Get Started</Link>
         </Button>
-        </div>
+        </Box>
+        </Box>
     )
 
 }
